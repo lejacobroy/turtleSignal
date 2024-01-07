@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trading System Backtester</title>
+</head>
+<body>
+    <h1>Configure Trading System</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.atr_period.label }}<br>
+            {{ form.atr_period(size=5) }}
+        </p>
+        <p>
+            {{ form.bollinger_period.label }}<br>
+            {{ form.bollinger_period(size=5) }}
+        </p>
+        <p>
+            {{ form.bollinger_std_dev.label }}<br>
+            {{ form.bollinger_std_dev(size=5) }}
+        </p>
+        <p>
+            {{ form.risk_per_trade.label }}<br>
+            {{ form.risk_per_trade(size=5) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>
