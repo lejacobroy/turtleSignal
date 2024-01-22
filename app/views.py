@@ -1,10 +1,11 @@
-from flask import render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for
 from . import db
 from .forms import TradingSystemForm
 from .backtester import run_backtest
 from .models import TradingSystemSettings, MarketData, TradeLog, BacktestResult
+main_bp = Blueprint('', __name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@main_bp.route('/', methods=['GET', 'POST'])
 def index():
     form = TradingSystemForm()
     if form.validate_on_submit():
@@ -20,7 +21,7 @@ def index():
         return redirect(url_for('results'))
     return render_template('index.html', form=form)
 
-@app.route('/results')
+@main_bp.route('/results')
 def results():
     results = BacktestResult.query.order_by(BacktestResult.timestamp.desc()).first()
     logs = TradeLog.query.order_by(TradeLog.timestamp.desc()).all()
