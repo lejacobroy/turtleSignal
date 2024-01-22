@@ -1,3 +1,6 @@
 .DS_Store
 instance/trading_system.db
 __pycache__
+prompt
+.gpteng/file_selection.toml
+.gpteng/memory/improve.txt

@@ -7,4 +7,4 @@ def add_market_data(data):
 
 def get_market_data():
     # This function will retrieve market data from the database.
-    pass
+    return MarketData.query.all()

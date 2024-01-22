@@ -2,7 +2,8 @@ from . import db
 from sqlalchemy import func
 
 class MarketData(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    unique = db.Column(db.String, primary_key=True)
+    id = db.Column(db.String, nullable=False)
     date = db.Column(db.DateTime, nullable=False)
     open = db.Column(db.Float, nullable=False)
     high = db.Column(db.Float, nullable=False)

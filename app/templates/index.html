@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Trading System Backtester</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Configure Trading System</h1>
-    <form method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.atr_period.label }}<br>
-            {{ form.atr_period(size=5) }}
-        </p>
-        <p>
-            {{ form.bollinger_period.label }}<br>
-            {{ form.bollinger_period(size=5) }}
-        </p>
-        <p>
-            {{ form.bollinger_std_dev.label }}<br>
-            {{ form.bollinger_std_dev(size=5) }}
-        </p>
-        <p>
-            {{ form.risk_per_trade.label }}<br>
-            {{ form.risk_per_trade(size=5) }}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
+    <div class="container mt-5">
+        <h1>Configure Trading System</h1>
+        <form method="post" class="row g-3">
+            {{ form.hidden_tag() }}
+            <div class="col-md-6">
+                {{ form.atr_period.label(class="form-label") }}
+                {{ form.atr_period(class="form-control", size=5) }}
+            </div>
+            <div class="col-md-6">
+                {{ form.bollinger_period.label(class="form-label") }}
+                {{ form.bollinger_period(class="form-control", size=5) }}
+            </div>
+            <div class="col-md-6">
+                {{ form.bollinger_std_dev.label(class="form-label") }}
+                {{ form.bollinger_std_dev(class="form-control", size=5) }}
+            </div>
+            <div class="col-md-6">
+                {{ form.risk_per_trade.label(class="form-label") }}
+                {{ form.risk_per_trade(class="form-control", size=5) }}
+            </div>
+            <div class="col-12">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
