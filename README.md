@@ -1,4 +1,6 @@
-# Trading System Backtester
+# turtleSignal, a trading system backtester
+
+![Alt text](/logo.png?raw=true "turtleSignal")
 
 ## Overview
 This project provides a web interface to backtest trend following trading systems using ATR for position sizing and Bollinger Bands for market entry signals. The backtest results are evaluated using MAR, CAGR%, and Sharpe Ratio.
